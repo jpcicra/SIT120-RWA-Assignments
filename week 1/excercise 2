@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<HTML>
+<HEAD>
+<TITLE> Task 2 </TITLE>
+</HEAD>
+<BODY bgcolor ="grey" text="black">
+
+
+
+
+<basefont size=2>
+<h1 ALIGN=CENTER> <BLINK> About Me </BLINK> </h1>
+<p> <font face="Arial" size=5 color="red"> <h2>This is a h2 heading. </h2> </font> </br> so is this but with different styling </br></br> GUI 
+Involves the actual buttons, text, and pixels that appear on the screen.
+The GUI designer would be responsible for everything about how a web site or
+application appears in the interface . 
+This includes visuals as well as overall architecture of the page. 
+Example: When should we put the Sign Up button? 
+UX 
+This is a much broader and higher-level discipline than GUI, because it includes not just 
+the interface, but also all the systems and interactions that support it. 
+Example: The UX designer should care about what happens when a frustrated user calls 
+the help desk as well as how pixels appear on the screen.
+ </p>
