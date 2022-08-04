@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    width: 80%;
+    margin: 0 auto;
+    border: 15px solid gray;
+
+    display: flex;
+}
+img {
+    width: 100%;
+}
+
+.left-side {
+    flex-basis: 70%;
+    background-color: lightgray;
+
+    text-align: center;
+
+}
+.left-side h1 {
+    margin: 25px 0;
+}
+.left-side span {
+    color: orange;
+}
+hr {
+    width: 100% !important;
+    margin: 10px 0;
+}
+.left-side h2 {
+    margin: 10px 0;
+}
+.left-side .contact, .left-side .Languages, .left-side .Hobbies {
+    text-align: start;
+    width: 80%;
+    margin: 20px auto;
+}
+.left-side .contact div {
+    margin: 10px 0;
+}
+.left-side .contact div a {
+    color: black;
+}
+
+.left-side .Hobbies ul{
+    padding: 0 20px;
+}
+
+.right-side {
+    flex-basis: 60%;
+}
+.right-side .summary, 
+.right-side .skill_Highlights, 
+.right-side .experience, 
+.right-side .Eduction, 
+.right-side .certifications {
+    margin: 20px 0;
+
+    text-align: start;
+    width: 90%;
+    margin: 20px auto;
+}
+.right-side div ul {
+    padding: 0 20px;
+}
+
+@media screen and (max-width: 950px) {
+    body {
+        width: 100%;   
+    }
+}
