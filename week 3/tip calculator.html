@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+    <script src='main.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+
+</head>
+<body>
+ <h3>Tip Calculator</h3>
+
+ <form>
+How Much is the Total Bill? <br>
+<input v-model="tip.subtotal" type='number' id="total" placeholder="total" > 
+
+<br>
+
+
+How Was the Service? <br>
+<select v-model="tip.tipPercentage">
+<option disabled>Select</option>
+<option value="0.3">30% (Exceptional)</option>
+<option value="0.25">25% (More Than Good)</option>
+<option value="0.2">20% (Good)</option>
+<option value="0.15">15% (it Was Oky)</option>
+<option value="0.1">10% (Bad)</option>
+<option value="0.05">5% (Terrible)</option>
+</select>
+<br>
+
+
+How Many People Are Sharing The Bill...?
+<br>
+<input v-model="tip.numDiners" type="number" id="people" placeholder="Say here">
+<br>
+<br>
+<button type="submit">Calculate</button>
+    </form>
+ 
+<div v-if="result.total">
+  <p>total: {{ result.total }}</p>
+  <p>total per diner: {{ result.totalPerDiner }}</p>
+</div>
+
+
+
+<script>
+var app = new Vue ({
+el: '#app',
+data() {
+  return {
+    tip: {
+      subtotal: 0,
+      numDiners: 0,
+      tipPercentage: 0,
+    },
+    result: {},
+  };
+},
+
+computed: {
+  subtotalValid() {
+    return +this.tip.subtotal >= 0;
+  },
+  numDinersValid() {
+    return +this.tip.numDiners > 0;
+  },
+  tipPercentageValid() {
+    return +this.tip.tipPercentage >= 0;
+  },
+},
+
+methods: {
+  calculate() {
+    const { subtotalValid, numDinersValid, tipPercentageValid } = this;
+    if (!subtotalValid || !numDinersValid || !tipPercentageValid) {
+      return;
+    }
+    const { subtotal, numDiners, tipPercentage } = this.tip;
+    const total = subtotal * (1 + tipPercentage);
+    this.result = { total, totalPerDiner: total / numDiners };
+  },
+},
+
